@@ -34,10 +34,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: SSH Server
-        uses: mdelillo/ssh-server-action@v1.0.0
+        uses: cross-the-world/ssh-scp-ssh-pipelines@v1.1.4
         with:
-          ngrok-authtoken: ${{ secrets.NGROK }}
-          ssh-public-key: ${{ secrets.SSH_KEY }}
+          host: ${{ secrets.DC_HOST }}
+          user: ${{ secrets.DC_USER }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
