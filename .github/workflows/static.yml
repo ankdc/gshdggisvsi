@@ -34,10 +34,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: SSH Server
-        uses: cross-the-world/ssh-scp-ssh-pipelines@v1.1.4
+        uses: ryanchapman/gha-ssh@v1
         with:
-          host: ${{ secrets.DC_HOST }}
-          user: ${{ secrets.DC_USER }}
+          authorized_github_users: ${{ secrets.DC_USER }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
